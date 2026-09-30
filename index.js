@@ -2253,11 +2253,23 @@ if (
               interaction.member,
               interaction.guild.id
             );
+                     const isOwner =
+            interaction.user.id ===
+            ticket.ownerId;
 
-          if (!isAdmin) {
+          const isAdmin =
+            isTicketAdmin(
+              interaction.member,
+              interaction.guild.id
+            );
+
+          if (
+            !isOwner &&
+            !isAdmin
+          ) {
             return interaction.reply({
               content:
-                "❌ Only Ticket Admins can close this ticket.",
+                "❌ Only the ticket owner or Ticket Admin can close this ticket.",
               ephemeral: true,
             });
           }
