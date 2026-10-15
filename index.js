@@ -3982,7 +3982,7 @@ async function checkVouchMessage(message) {
 
     try {
 
-      await message.react('✅');
+      await message.react('<a:tick:1450103435897602152> ');
 
     } catch {}
 
@@ -4147,24 +4147,11 @@ async function checkVouchReminders() {
     // Reminder channel
     // -----------------------------------------------
 
-    const reminderChannelId =
-      s.reminderChannel ||
-      s.vouchChannel;
-
-    if (
-      !reminderChannelId
-    ) {
-      continue;
-    }
-
     const channel =
-      guild.channels.cache.get(
-        reminderChannelId
-      );
-
-    if (!channel) {
-      continue;
-    }
+  guild.channels.cache.get(
+    vouch.ticketChannelId
+  );
+    
 
     // -----------------------------------------------
     // Prevent duplicate reminder
