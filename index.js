@@ -1666,7 +1666,8 @@ client.on(
 
       return message.channel.send({
        
-        content: '<@${ticket.ownerId}>',
+        content: `<@${ticket.ownerId}>`,
+        
         
         embeds: [
           
