@@ -1665,10 +1665,11 @@ client.on(
       }
 
       return message.channel.send({
+       
+        content: '<@${ticket.ownerId}>',
         
-
         embeds: [
-
+          
           makeEmbed(
             message.guild,
             'vouch',
